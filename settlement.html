@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Ezypay Admin Panel</title>
+  </head>
+  <body>
+    <!-- top navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="offcanvasExample">
+          <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+        </button>
+        <a class="navbar-brand me-auto logo ms-3" href="#">
+          <img src="img/logo.png" class="img-fluid" alt="">
+          </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar" 
+        aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNavBar">
+          <div class="d-flex ms-auto my-3 my-lg-0">
+            <ul class="navbar-nav align-items-center">
+              <li>
+                 <div class="balance_show">
+                    <div class="main_aeps_bal">
+                       <h5>Main</h5>
+                       <p>₹ 100</p>
+                    </div>
+                    <div class="main_aeps_bal">
+                       <h5>Aeps</h5>
+                       <p>₹ 300</p>
+                    </div>
+                 </div>
+              </li>
+              <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 <i class="bi bi-person-fill"></i>
+                 </a>
+                 <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                       <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                 </ul>
+              </li>
+           </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- top navigation bar -->
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-start sidebar-nav bg-light" tabindex="-1" id="sidebar">
+      <div class="offcanvas-body p-0">
+        <nav class="navbar-dark">
+          <ul class="navbar-nav">
+            <li>
+            </li>
+            <li>
+              <a href="index.html" class="nav-link active">
+                <span class="me-2"><img src="img/dashboard.png" alt="dashboard"></span>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-3">
+                <span class="me-2"><img src="img/businessman.png" alt="businessman"></span>
+                <span>Profile</span>
+              </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link">
+                  <span class="me-2"><img src="img/bank.png" alt="bank"></span>
+                  <span>Bank Details</span>
+                </a>
+              </li>
+              <li>
+                <a href="txn_history.html" class="nav-link">
+                  <span class="me-2"><img src="img/transaction-history.png" alt="transaction-history"></span>
+                  <span>Txn History</span>
+                </a>
+              </li>
+              <li class="accordion dropdown_sec" id="accordionExample">
+                  <div class="accordion-item">
+                      <a href="javascript:void(0)" class="nav-link accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <span class="me-2"><img src="img/report.png" alt="report"></span>
+                        <span>Report</span>
+                      </a>
+                    <ul id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <li><a href="retailer.html" class="drop_list">
+                      <span class="me-2"><img src="img/store.png" alt="report"></span>
+                        <span>Retailer</span>
+                    </a>
+                    </li>
+                    <li><a href="distributor.html" class="drop_list">
+                      <span class="me-2"><img src="img/distributor.png" alt="report"></span>
+                        <span>Distributor</span>
+                    </a>
+                    </li>
+                    <li><a href="sales.html" class="drop_list">
+                      <span class="me-2"><img src="img/salesman.png" alt="report"></span>
+                        <span>Sales Person</span>
+                    </a>
+                    </li>
+                    <li><a href="targetVSachievement.html" class="drop_list">
+                      <span class="me-2"><img src="img/target.png" alt="report"></span>
+                        <span>Target vs Achievement</span>
+                    </a>
+                    </li>
+                    </ul>
+                  </div>
+              </li>
+              <li class="accordion dropdown_sec" id="accordionExample">
+                <div class="accordion-item">
+                    <a href="javascript:void(0)" class="nav-link accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      <span class="me-2"><img src="img/report.png" alt="report"></span>
+                      <span>Reports</span>
+                    </a>
+                  <ul id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                  <li><a href="report_purchase_summary.html" class="drop_list">
+                    <span class="me-2"><img src="img/store.png" alt="report"></span>
+                      <span>Purchase Summary</span>
+                  </a>
+                  </li>
+                  <li><a href="report_transaction_report.html" class="drop_list">
+                    <span class="me-2"><img src="img/distributor.png" alt="report"></span>
+                      <span>Transaction Report</span>
+                  </a>
+                  </li>
+                  <li><a href="report_bbps_agent.html" class="drop_list">
+                    <span class="me-2"><img src="img/salesman.png" alt="report"></span>
+                      <span>BBPS Agent Master</span>
+                  </a>
+                  </li>
+                  <li><a href="report_cashout.html" class="drop_list">
+                    <span class="me-2"><img src="img/target.png" alt="report"></span>
+                      <span>Cashout Report</span>
+                  </a>
+                  </li>
+                  <li><a href="report_payment.html" class="drop_list">
+                    <span class="me-2"><img src="img/target.png" alt="report"></span>
+                      <span>Payment History</span>
+                  </a>
+                  </li>
+                  <li><a href="report_dmt_history.html" class="drop_list">
+                    <span class="me-2"><img src="img/target.png" alt="report"></span>
+                      <span>DMT History</span>
+                  </a>
+                  </li>
+                  <li><a href="report_vendor_transaction.html" class="drop_list">
+                    <span class="me-2"><img src="img/target.png" alt="report"></span>
+                      <span>Vendor Transaction Report</span>
+                  </a>
+                  </li>
+                  </ul>
+                </div>
+            </li>
+              <li class="accordion dropdown_sec" id="accordionExample">
+                <div class="accordion-item">
+                    <a href="#" class="nav-link accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      <span class="me-2"><img src="img/balance.png" alt="balance"></span>
+                      <span>Balance</span>
+                    </a>
+                  <ul id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <li><a href="MyBalanceRetailer.html" class="drop_list">
+                    <span class="me-2"><img src="img/store.png" alt="report"></span>
+                      <span>Retailer</span>
+                  </a>
+                  </li>
+                  <li><a href="MyBalanceDistributor.html" class="drop_list">
+                    <span class="me-2"><img src="img/distributor.png" alt="report"></span>
+                      <span>Distributor</span>
+                  </a>
+                  </li>
+                  <li><a href="MyBalanceFranchise.html" class="drop_list">
+                    <span class="me-2"><img src="img/franchise.png" alt="report"></span>
+                      <span>Franchise</span>
+                  </a>
+                  </li>
+                  <li><a href="MyBalancePartner.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="report"></span>
+                      <span>Partner</span>
+                  </a>
+                  </li>
+                  </ul>
+                </div>
+            </li>
+            <li class="accordion dropdown_sec" id="accordionExample">
+                <div class="accordion-item">
+                    <a href="javascript:void(0)" class="nav-link accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      <span class="me-2"><img src="img/balance.png" alt="balance"></span>
+                      <span>Accounts</span>
+                    </a>
+                  <ul id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                  <li><a href="account_tds-retailer.html" class="drop_list">
+                    <span class="me-2"><img src="img/distributor.png" alt="distributor"></span>
+                      <span>TDS (Retailer)</span>
+                  </a>
+                  </li>
+                  <li><a href="account_franchise.html" class="drop_list">
+                    <span class="me-2"><img src="img/franchise.png" alt="franchise"></span>
+                      <span>TDS (Franchise)</span>
+                  </a>
+                  </li>
+                  <li><a href="account_p2psales.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>P2P Sales</span>
+                  </a>
+                  </li>
+                  <li><a href="accounts_surcharge.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>Surcharge</span>
+                  </a>
+                  </li>
+                  <li><a href="account_dmt_commission.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>DMT Commission</span>
+                  </a>
+                  </li>
+                  <li><a href="account_p2a_commission.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>P2A Commission New</span>
+                  </a>
+                  </li>
+                  <li><a href="account_my_income.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>My Income</span>
+                  </a>
+                  </li>
+                  <li><a href="account_p2a_sale.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>P2A Sale</span>
+                  </a>
+                  </li>
+                  <li><a href="purchase_summary.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>Purchase Summary</span>
+                  </a>
+                  </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#" class="nav-link">
+                  <span class="me-2"><img src="img/bill.png" alt="bill"></span>
+                  <span>Invoices</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link">
+                  <span class="me-2"><img src="img/download.png" alt="download"></span>
+                  <span>Download</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link">
+                  <span class="me-2"><img src="img/certificate.png" alt="certificate"></span>
+                  <span>Download Certificate</span>
+                </a>
+              </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- offcanvas -->
+    <main class="mt-5 pt-3">
+    <section class="dashboard">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Dashboard</h3>
+          </div>
+        </div>
+      </div>
+     </section>
+      <section class="serv2" id="hideArea">
+        <div class="container-fluid">
+             <div class="services ">
+              <div class="row">
+                <div class="col-md-6">
+                    <div class="service-area">
+                     <h3>Service</h3>
+                    </div>
+                 </div>
+               </div>
+          </div>
+                <div class="row">
+                   <div class="col-lg-2 col-md-2">
+                      <div class="img_service_area">
+                         <div class="img_back">
+                            <img src="img/top-up.png">
+                         </div>
+                         <a href="prepaid.html">Mobile Recharge</a>
+                      </div>
+                   </div>
+                   <div class="col-lg-2 col-md-2">
+                     <div class="img_service_area">
+                        <div class="img_back">
+                           <img src="img/dth.png">
+                        </div>
+                        <a href="dth.html">DTH Recharge</a>
+                     </div>
+                  </div>
+                  <div class="col-lg-2 col-md-2">
+                     <div class="img_service_area">
+                        <div class="img_back">
+                           <img src="img/bbps.png">
+                        </div>
+                        <a href="bbps.html">Bill Payments</a>
+                     </div>
+                  </div>
+                  <div class="col-lg-2 col-md-2">
+                     <div class="img_service_area">
+                        <div class="img_back">
+                           <img src="img/dmt2.png">
+                        </div>
+                        <a href="index.html">Money Transfer</a>
+                     </div>
+                  </div>
+                  <div class="col-lg-2 col-md-2">
+                    <div class="img_service_area">
+                       <div class="img_back">
+                          <img src="img/matm.png">
+                       </div>
+                       <a href="microatm.html">Mini ATM</a>
+                    </div>
+                 </div>
+                  <div class="col-lg-2 col-md-2">
+                     <div class="img_service_area">
+                        <div class="img_back">
+                           <img src="img/cmsser.png">
+                        </div>
+                        <a href="#">CMS</a>
+                     </div>
+                  </div>
+                </div>
+                <div class="hidden_show_services">
+                   <div id="panel" style="display: none;">
+                      <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                          <div class="img_service_area">
+                             <div class="img_back">
+                                <img src="img/aeps.png">
+                             </div>
+                             <a href="aeps-service.html">AePs-1</a>
+                          </div>
+                       </div>
+                       <div class="col-lg-2 col-md-2">
+                          <div class="img_service_area">
+                             <div class="img_back">
+                                <img src="img/aeps.png">
+                             </div>
+                             <a href="aeps-service.html">AePs-2</a>
+                          </div>
+                       </div>
+                        <div class="col-lg-2 col-md-2">
+                           <div class="img_service_area">
+                              <div class="img_back">
+                                 <img src="img/pay1.png">
+                              </div>
+                              <a href="#">Aadhaar Pay</a>
+                           </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                           <div class="img_service_area">
+                              <div class="img_back">
+                                 <img src="img/train.png">
+                              </div>
+                              <a href="#">IRCTC Ticket Booking</a>
+                           </div>
+                        </div>
+                         <div class="col-lg-2 col-md-2">
+                            <div class="img_service_area">
+                               <div class="img_back">
+                                  <img src="img/bus.png">
+                               </div>
+                               <a href="#">Bus Booking</a>
+                            </div>
+                         </div>
+                         <div class="col-lg-2 col-md-2">
+                           <div class="img_service_area">
+                              <div class="img_back">
+                                 <img src="img/flight.png">
+                              </div>
+                              <a href="#">Flight Booking</a>
+                           </div>
+                        </div>
+                         <div class="col-lg-2 col-md-2">
+                            <div class="img_service_area">
+                               <div class="img_back">
+                                  <img src="img/hotel.png">
+                               </div>
+                               <a href="#">Hotel Booking</a>
+                            </div>
+                         </div>
+                         <div class="col-lg-2 col-md-2">
+                           <div class="img_service_area">
+                              <div class="img_back">
+                                 <img src="img/pan-card.png">
+                              </div>
+                              <a href="#">PAN Card</a>
+                           </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                          <div class="img_service_area">
+                             <div class="img_back">
+                                <img src="img/insurance.png">
+                             </div>
+                             <a href="#">Insurance</a>
+                          </div>
+                       </div>
+                      </div>
+                   </div>
+                   <div id="flip" class="view_all_services_hide"><span class="bg-light"><i class="fa fa-angle-down rotate" aria-hidden="true"></i></span></div>
+                </div>
+           </div>
+      </section>
+      <section class="prepaid-area1 btn_sm">
+        <div class="conatiner-fluid">
+           <div class="row">
+              <div class="col-md-12">
+               <div class="tab">
+                 <button class="tablinks active" onclick="openCity(event, 'MoveBank')">Move to Bank</button>
+                 <button class="tablinks" onclick="openCity(event, 'Movetobank')">Move to Main</button>
+                 <button class="tablinks" onclick="openCity(event, 'MoveDistributor')">Move to Distributor</button>
+                 <button class="tablinks" onclick="openCity(event, 'TxnHistory')">History</button>
+               </div>
+               <div id="MoveBank" class="tabcontent" style="display: block;">
+                <div class="beneficiary_section search">
+                  <div class="row align-items-center">
+                    <div class="col-md-3">
+                      <form action="#">
+                        <div class="form-group ico">
+                          <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                          <input type="search" class="form-control" placeholder="Search">
+                        </div>
+                      </form>
+                     </div>
+                     <div class="col-md-5"></div>
+                     <div class="col-md-3">
+                      <div class="postbalance">
+                        <div class="aepsbalance">
+                          <h5>Available : <span>₹ 25000</span></h5>
+                        </div>
+                        <div class="aepsbalance">
+                          <h5>Eligible : <span>₹ 20000</span></h5>
+                        </div>
+                      </div>
+                     </div>
+                  </div>
+                  <div class="row my-3">
+                    <div class="col-md-12">
+                      <div class="send_money">
+                        <h4>Account Details</h4>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                     <div class="table-responsive login-box">
+                         <table class="table table-bordered table-striped align-middle mb-0 bg-white table-hover money_send w-100">
+                           <tbody>
+                             <tr>
+                              <td>1</td>
+                               <td>
+                                 <div class="d-flex align-items-center">
+                                   <img
+                                       src="https://play-lh.googleusercontent.com/sZAzmjgUwDiyEhPe4j-uyGwLDiPcdHdH0n2-BmePP_3IT_wuU2nLKhMKtt6jCX2X-GE"
+                                       alt="" style="width: 45px; height: 45px" class="rounded-circle"
+                                       />
+                                       <img src="img/verify.svg" alt="badge" class="badge_image">
+                                   <div class="">
+                                     <p class="fw-bold fs-14 mb-1">MR MANASHA KHATUA</p>
+                                     <p class="text-muted fs-14  mb-0">Central Bank of India</p>
+                                   </div>
+                                 </div>
+                               </td>
+                               <td>
+                                 <p class="fw-normal fs-14 mb-1">A/C : 12345678910</p>
+                                 <p class="text-muted fs-14 mb-0">IFSC Code : CBIN0284143</p>
+                               </td>
+                               <td>
+                                 <div class="d-flex justify-content-between">
+                                   <!-- Default radio -->
+                                 <div class="form-check fs-15">
+                                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"  checked/>
+                                   <label class="form-check-label" for="flexRadioDefault1">IMPS </label>
+                                 </div>
+   
+                                 <!-- Default checked radio -->
+                                 <div class="form-check fs-15">
+                                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
+                                   <label class="form-check-label" for="flexRadioDefault2">NEFT </label>
+                                 </div>
+                                 </div>
+                               </td>
+                               <td>
+                                  <div class="user-box">
+                                  <input type="text" name="" required="">
+                                  <label>Amount</label>
+                                </div>
+                               </td>
+                               <td>
+                                <div class="user-box">
+                                  <input type="text" name="" required="">
+                                  <label>Mpin</label>
+                                </div>
+                               </td>
+                               
+                               <td>
+                                 <button type="button" class="btn btn-secondary btn-md">Move</button>
+                               </td>
+                               <!-- <td> 
+                                 <div class="delete_icon">
+                                   <a href="#" type="button" class="text-success" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Verify">
+                                     <i class="fas fa-check"></i>
+                                   </a>
+                                   <a href="#" type="button" class="text-danger" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Delete">
+                                     <i class="fas fa-trash-can"></i>
+                                   </a>
+                                   <a href="#" type="button" class="text-warning" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="De-activate">
+                                     <i class="fa-sharp fa-solid fa-ban"></i>
+                                   </a>
+                                 </div>
+                               </td> -->
+                             </tr>
+                             <tr>
+                              <td>2</td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                  <img
+                                    src="data:image/png;base64,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"
+                                      alt="" style="width: 45px; height: 45px" class="rounded-circle"
+                                      />
+                                      <img src="img/verify.svg" alt="badge" class="badge_image">
+                                  <div class="">
+                                    <p class="fw-bold fs-14 mb-1">MR MANASHA KHATUA</p>
+                                    <p class="text-muted fs-14  mb-0">State Bank of India</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <p class="fw-normal fs-14 mb-1">A/C : 12345678910</p>
+                                <p class="text-muted fs-14 mb-0">IFSC Code : CBIN0284143</p>
+                              </td>
+                              <td>
+                                <div class="d-flex justify-content-between">
+                                  <!-- Default radio -->
+                                <div class="form-check fs-15">
+                                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                                  <label class="form-check-label" for="flexRadioDefault1">IMPS </label>
+                                </div>
+  
+                                <!-- Default checked radio -->
+                                <div class="form-check fs-15">
+                                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
+                                  <label class="form-check-label" for="flexRadioDefault2">NEFT </label>
+                                </div>
+                                </div>
+                              </td>
+                              <td>
+                                 <div class="user-box">
+                                 <input type="text" name="" required="">
+                                 <label>Amount</label>
+                               </div>
+                              </td>
+                              <td>
+                               <div class="user-box">
+                                 <input type="text" name="" required="">
+                                 <label>Mpin</label>
+                               </div>
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#exampleModal">Move</button>
+                                
+                              </td>
+                              <!-- <td> 
+                                <div class="delete_icon">
+                                  <a href="#" type="button" class="text-success" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Verify">
+                                    <i class="fas fa-check"></i>
+                                  </a>
+                                  <a href="#" type="button" class="text-danger" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="Delete">
+                                    <i class="fas fa-trash-can"></i>
+                                  </a>
+                                  <a href="#" type="button" class="text-warning" data-mdb-toggle="tooltip" data-mdb-placement="bottom" title="De-activate">
+                                    <i class="fa-sharp fa-solid fa-ban"></i>
+                                  </a>
+                                </div>
+                              </td> -->
+                            </tr>
+                           </tbody>
+                         </table>
+                       </div>
+                    </div>
+                  </div>
+                   </div>
+               </div>
+               <div id="Movetobank" class="tabcontent">
+                <section class="prepaid_services login-box1 recent_txn">
+                  <div class="conatiner">
+                    <div class="row align-items-center">
+                      <div class="col-md-3">
+                       </div>
+                       <div class="col-md-5"></div>
+                       <div class="col-md-3">
+                        <div class="postbalance">
+                          <div class="aepsbalance">
+                            <h5>Available : <span>₹ 25000</span></h5>
+                          </div>
+                          <div class="aepsbalance">
+                            <h5>Eligible : <span>₹ 20000</span></h5>
+                          </div>
+                        </div>
+                       </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="sender_verify mobile_recharge_page">
+                        <div class="col-md-12">
+                            <label for="">Move to Main Wallet</label>
+                          </div>
+                        <form action="">
+                            <div class="row mb-3">
+                              <div class="col-md-3">
+                                <div class="user-box">
+                                  <input type="text" name="" required="">
+                                  <label>Amount</label>
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="user-box">
+                                  <input type="text" name="" required="">
+                                  <label>Mpin</label>
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <div class="btn_service mt-0">
+                                  <a href="#" class="btn">Submit</a>
+                                  <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
+                                </div>
+                              </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+               </section>
+              </div>
+               <div id="MoveDistributor" class="tabcontent">
+                <section class="prepaid_services login-box1 recent_txn">
+                  <div class="conatiner">
+                    <div class="row align-items-center">
+                      <div class="col-md-3">
+                       </div>
+                       <div class="col-md-5"></div>
+                       <div class="col-md-3">
+                        <div class="postbalance">
+                          <div class="aepsbalance">
+                            <h5>Available : <span>₹ 25000</span></h5>
+                          </div>
+                          <div class="aepsbalance">
+                            <h5>Eligible : <span>₹ 20000</span></h5>
+                          </div>
+                        </div>
+                       </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="sender_verify mobile_recharge_page">
+                         <div class="col-md-12">
+                            <label for="">Move to Distributor Wallet</label>
+                         </div>
+                        <form action="">
+                          <div class="row mb-3">
+                          <div class="col-md-3">
+                          <div class="distributor_id">
+                            <p>Suman Computer - D000052303</p>
+                          </div>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-md-3">
+                          <div class="user-box">
+                            <input type="text" name="" required="">
+                            <label>Amount</label>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="user-box">
+                            <input type="text" name="" required="">
+                            <label>Mpin</label>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <div class="btn_service mt-0">
+                            <a href="#" class="btn">Submit</a>
+                            <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
+                           </div>
+                          </div>
+                       </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+               </section>
+              </div>
+               <div id="TxnHistory" class="tabcontent">
+                <div class="recent_txn">
+                 <div class="row my-3">
+                   <div class="col-md-4">
+                     <form action="#">
+                       <div class="search">
+                         <div class="form-group ico">
+                           <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                           <input type="search" class="form-control" placeholder="Search">
+                         </div>
+                       </div>
+                     </form>
+                    </div>
+                 </div>
+                 <div class="row">
+                  <div class="col-lg-12">
+                   <div class="table-responsive">
+                     <table class="table table-bordered table-striped table-hover w-100">
+                      <thead>
+                        <tr>
+                          <th>Date</th>
+                          <th>Tnx ID</th>
+                          <th>Req ID</th>
+                          <th>Mobile No</th>
+                          <th>Beneficiary</th>
+                          <th>Account No.</th>
+                          <th>IFSC Code</th>
+                          <th>Type</th>
+                          <th>Bank Refno</th>
+                          <th>Status</th>
+                          <th>Amount</th>
+                          <th>More</th>
+                        </tr>
+                      </thead>
+                       <tbody>
+                         <tr>
+                          <td>09/05/2023 17:10:35</td>
+                          <td>300779871</td>
+                          <td>20230505171039766</td>
+                          <td>9609952830</td>
+                          <td>Mr bharos mandal</td>
+                          <td>31993206807</td>
+                          <td>SBIN0001266</td>
+                          <td>NEFT</td>
+                          <td>312517034514</td>
+                          <td>
+                            <div class="success_sts">
+                              Success
+                            </div>
+                          </td>
+                          <td>1000</td>
+                           </td>
+                           <td>
+                            <div class="print_icon drowdown_three_dot">
+                              <div class="btn-group dropstart">
+                                <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                 <li><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Print</button></li>
+                                 <li><button type="button" class="btn">Complain</button></li>
+                                </ul>
+                              </div>
+                              
+                            </div>
+                          </td>
+                         </tr>
+                         <tr>
+                          <td>09/05/2023 17:10:35</td>
+                          <td>300779871</td>
+                          <td>20230505171039766</td>
+                          <td>9609952830</td>
+                          <td>Mr bharos mandal</td>
+                          <td>31993206807</td>
+                          <td>SBIN0001266</td>
+                          <td>IMPS</td>
+                          <td>312517034514</td>
+                          <td>
+                            <div class="success_sts bg-danger">
+                              Failed
+                            </div>
+                          </td>
+                          <td>1000</td>
+                          <td>
+                            <div class="print_icon drowdown_three_dot">
+                              <div class="btn-group dropstart">
+                                <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                 <li><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Print</button></li>
+                                 <li><button type="button" class="btn">Complain</button></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>09/05/2023 17:10:35</td>
+                          <td>300779871</td>
+                          <td>20230505171039766</td>
+                          <td>9609952830</td>
+                          <td>Mr bharos mandal</td>
+                          <td>31993206807</td>
+                          <td>SBIN0001266</td>
+                          <td>Move2Main</td>
+                          <td>312517034514</td>
+                          <td>
+                            <div class="success_sts">
+                              Success
+                            </div>
+                          </td>
+                          <td>1000</td>
+                          <td>
+                            <div class="print_icon drowdown_three_dot">
+                              <div class="btn-group dropstart">
+                                <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                 <li><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Print</button></li>
+                                 <li><button type="button" class="btn">Complain</button></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                       </tbody>
+                     </table>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+              </div>
+              </div>
+           </div>
+        </div>
+     </section>
+    </main>
+      <!-- Modal Start -->
+      <section class="modal_page bps">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirm Transfer</h5>
+              </div>
+              <div class="modal-body">
+                <div class="mb-5">
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Beneficiary Name</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>BABAJI NAYAK</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Bank Name</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>State Bank Of India</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>IFSC Code</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>SBIN0123456</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Account No.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>32456789142</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Transfer Mode</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>IMPS</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Amount</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>₹ 100.00 (One Hundred Only)</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Charges</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>₹ 4.00 (Four Only)</p>
+                       </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="modal_footer">
+                <div class="row">
+                  <div class="col-md-6">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  </div>
+                  <div class="col-md-6">
+                    <button type="button" class="btn btn-primary">Print</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       </section>
+    <!-- Modal End -->
+       <!-- Modal confirmation  Start -->
+       <section class="modal_page bps">
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Money Transfer Receipt</h5>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="bank_area_logo1">
+                      <div class="bank_icon_logo">
+                        <img src="img/ezypay.jpeg" alt="Bank logo">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Date</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>: 31-May-2023 04:13:46 PM</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Payment Type</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>: IMPS,IMPS,IMPS,IMPS,IMPS</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Retailer</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>: 348-c-Zee Music Corner</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Customer</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>: 9405452281</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Bene Name</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>: Shadab Ansari</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Account No.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>: 037001088639</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>IFSC Code</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>: CBIN03123456</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Bank Name</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>: Central Bank Of India</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Amount</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>: ₹ 2000,5000,5000,5000</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Charge</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>: ₹ 0</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>op ID</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>: 309016045007</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Status</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>: Success</p>
+                       </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="bank_info1">
+                   <p>Txn</p>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="bank_info2">
+                      <p>: ₹ 17000</p>
+                       </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 border-top">
+                  <div class="powerBy">
+                    <small>!!.... Thank you visit again ....!!</small>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="modal_footer">
+                <div class="row">
+                  <div class="col-md-6">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  </div>
+                  <div class="col-md-6">
+                    <button type="button" class="btn btn-primary">Print</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       </section>
+    <!--  Modal confirmation  End -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="js/mainscript.js"></script>
+  </body>
+</html>

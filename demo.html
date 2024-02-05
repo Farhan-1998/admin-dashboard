@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Validation</title>
+    <style>
+        #table-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Code Validation</h1>
+    
+    <label for="validationCode">Enter 10-digit Code:</label>
+    <input type="text" id="validationCode" oninput="validateInput()">
+
+    <div id="table-container">
+        <h2>Table</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                    <!-- Add more columns if needed -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table content goes here -->
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <!-- Add more cells if needed -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function validateInput() {
+            var inputCode = document.getElementById('validationCode').value;
+            var tableContainer = document.getElementById('table-container');
+
+            if (inputCode.length === 10) {
+                tableContainer.style.display = 'block';
+            } else {
+                tableContainer.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>

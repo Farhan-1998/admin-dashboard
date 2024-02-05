@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Ezypay Admin Panel</title>
+  </head>
+  <body>
+    <!-- top navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="offcanvasExample">
+          <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+        </button>
+        <a class="navbar-brand me-auto logo ms-3" href="#">
+          <img src="img/logo.png" class="img-fluid" alt="">
+          </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar" 
+        aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNavBar">
+          <div class="d-flex ms-auto my-3 my-lg-0">
+            <ul class="navbar-nav align-items-center">
+              <li>
+                 <div class="balance_show">
+                    <div class="main_aeps_bal">
+                       <h5>Main</h5>
+                       <p>₹ 100</p>
+                    </div>
+                    <div class="main_aeps_bal">
+                       <h5>Aeps</h5>
+                       <p>₹ 300</p>
+                    </div>
+                 </div>
+              </li>
+              <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 <i class="bi bi-person-fill"></i>
+                 </a>
+                 <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                       <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                 </ul>
+              </li>
+           </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- top navigation bar -->
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-start sidebar-nav bg-light" tabindex="-1" id="sidebar">
+      <div class="offcanvas-body p-0">
+        <nav class="navbar-dark">
+          <ul class="navbar-nav">
+            <li>
+            </li>
+            <li>
+              <a href="index.html" class="nav-link active">
+                <span class="me-2"><img src="img/dashboard.png" alt="dashboard"></span>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-3">
+                <span class="me-2"><img src="img/businessman.png" alt="businessman"></span>
+                <span>Profile</span>
+              </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link">
+                  <span class="me-2"><img src="img/bank.png" alt="bank"></span>
+                  <span>Bank Details</span>
+                </a>
+              </li>
+              <li>
+                <a href="txn_history.html" class="nav-link">
+                  <span class="me-2"><img src="img/transaction-history.png" alt="transaction-history"></span>
+                  <span>Txn History</span>
+                </a>
+              </li>
+              <li class="accordion dropdown_sec" id="accordionExample">
+                  <div class="accordion-item">
+                      <a href="javascript:void(0)" class="nav-link accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <span class="me-2"><img src="img/report.png" alt="report"></span>
+                        <span>Report</span>
+                      </a>
+                    <ul id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <li><a href="retailer.html" class="drop_list">
+                      <span class="me-2"><img src="img/store.png" alt="report"></span>
+                        <span>Retailer</span>
+                    </a>
+                    </li>
+                    <li><a href="distributor.html" class="drop_list">
+                      <span class="me-2"><img src="img/distributor.png" alt="report"></span>
+                        <span>Distributor</span>
+                    </a>
+                    </li>
+                    <li><a href="sales.html" class="drop_list">
+                      <span class="me-2"><img src="img/salesman.png" alt="report"></span>
+                        <span>Sales Person</span>
+                    </a>
+                    </li>
+                    <li><a href="targetVSachievement.html" class="drop_list">
+                      <span class="me-2"><img src="img/target.png" alt="report"></span>
+                        <span>Target vs Achievement</span>
+                    </a>
+                    </li>
+                    </ul>
+                  </div>
+              </li>
+              <li class="accordion dropdown_sec" id="accordionExample">
+                <div class="accordion-item">
+                    <a href="javascript:void(0)" class="nav-link accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      <span class="me-2"><img src="img/report.png" alt="report"></span>
+                      <span>Reports</span>
+                    </a>
+                  <ul id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                  <li><a href="report_purchase_summary.html" class="drop_list">
+                    <span class="me-2"><img src="img/store.png" alt="report"></span>
+                      <span>Purchase Summary</span>
+                  </a>
+                  </li>
+                  <li><a href="report_transaction_report.html" class="drop_list">
+                    <span class="me-2"><img src="img/distributor.png" alt="report"></span>
+                      <span>Transaction Report</span>
+                  </a>
+                  </li>
+                  <li><a href="report_bbps_agent.html" class="drop_list">
+                    <span class="me-2"><img src="img/salesman.png" alt="report"></span>
+                      <span>BBPS Agent Master</span>
+                  </a>
+                  </li>
+                  <li><a href="report_cashout.html" class="drop_list">
+                    <span class="me-2"><img src="img/target.png" alt="report"></span>
+                      <span>Cashout Report</span>
+                  </a>
+                  </li>
+                  <li><a href="report_payment.html" class="drop_list">
+                    <span class="me-2"><img src="img/target.png" alt="report"></span>
+                      <span>Payment History</span>
+                  </a>
+                  </li>
+                  <li><a href="report_dmt_history.html" class="drop_list">
+                    <span class="me-2"><img src="img/target.png" alt="report"></span>
+                      <span>DMT History</span>
+                  </a>
+                  </li>
+                  <li><a href="report_vendor_transaction.html" class="drop_list">
+                    <span class="me-2"><img src="img/target.png" alt="report"></span>
+                      <span>Vendor Transaction Report</span>
+                  </a>
+                  </li>
+                  </ul>
+                </div>
+            </li>
+              <li class="accordion dropdown_sec" id="accordionExample">
+                <div class="accordion-item">
+                    <a href="#" class="nav-link accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      <span class="me-2"><img src="img/balance.png" alt="balance"></span>
+                      <span>Balance</span>
+                    </a>
+                  <ul id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <li><a href="MyBalanceRetailer.html" class="drop_list">
+                    <span class="me-2"><img src="img/store.png" alt="report"></span>
+                      <span>Retailer</span>
+                  </a>
+                  </li>
+                  <li><a href="MyBalanceDistributor.html" class="drop_list">
+                    <span class="me-2"><img src="img/distributor.png" alt="report"></span>
+                      <span>Distributor</span>
+                  </a>
+                  </li>
+                  <li><a href="MyBalanceFranchise.html" class="drop_list">
+                    <span class="me-2"><img src="img/franchise.png" alt="report"></span>
+                      <span>Franchise</span>
+                  </a>
+                  </li>
+                  <li><a href="MyBalancePartner.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="report"></span>
+                      <span>Partner</span>
+                  </a>
+                  </li>
+                  </ul>
+                </div>
+            </li>
+            <li class="accordion dropdown_sec" id="accordionExample">
+                <div class="accordion-item">
+                    <a href="javascript:void(0)" class="nav-link accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      <span class="me-2"><img src="img/balance.png" alt="balance"></span>
+                      <span>Accounts</span>
+                    </a>
+                  <ul id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                  <li><a href="account_tds-retailer.html" class="drop_list">
+                    <span class="me-2"><img src="img/distributor.png" alt="distributor"></span>
+                      <span>TDS (Retailer)</span>
+                  </a>
+                  </li>
+                  <li><a href="account_franchise.html" class="drop_list">
+                    <span class="me-2"><img src="img/franchise.png" alt="franchise"></span>
+                      <span>TDS (Franchise)</span>
+                  </a>
+                  </li>
+                  <li><a href="account_p2psales.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>P2P Sales</span>
+                  </a>
+                  </li>
+                  <li><a href="accounts_surcharge.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>Surcharge</span>
+                  </a>
+                  </li>
+                  <li><a href="account_dmt_commission.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>DMT Commission</span>
+                  </a>
+                  </li>
+                  <li><a href="account_p2a_commission.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>P2A Commission New</span>
+                  </a>
+                  </li>
+                  <li><a href="account_my_income.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>My Income</span>
+                  </a>
+                  </li>
+                  <li><a href="account_p2a_sale.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>P2A Sale</span>
+                  </a>
+                  </li>
+                  <li><a href="purchase_summary.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>Purchase Summary</span>
+                  </a>
+                  </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#" class="nav-link">
+                  <span class="me-2"><img src="img/bill.png" alt="bill"></span>
+                  <span>Invoices</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link">
+                  <span class="me-2"><img src="img/download.png" alt="download"></span>
+                  <span>Download</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link">
+                  <span class="me-2"><img src="img/certificate.png" alt="certificate"></span>
+                  <span>Download Certificate</span>
+                </a>
+              </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- offcanvas -->
+    <main class="mt-5 pt-3">
+    <section class="dashboard">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Dashboard</h3>
+          </div>
+        </div>
+      </div>
+     </section>
+      <section class="serv2" id="hideArea">
+        <div class="container-fluid">
+             <div class="services ">
+              <div class="row">
+                <div class="col-md-6">
+                    <div class="service-area">
+                     <h3>Service</h3>
+                    </div>
+                 </div>
+               </div>
+          </div>
+                <div class="row">
+                   <div class="col-lg-2 col-md-2">
+                      <div class="img_service_area">
+                         <div class="img_back">
+                            <img src="img/top-up.png">
+                         </div>
+                         <a href="prepaid.html">Mobile Recharge</a>
+                      </div>
+                   </div>
+                   <div class="col-lg-2 col-md-2">
+                     <div class="img_service_area">
+                        <div class="img_back">
+                           <img src="img/dth.png">
+                        </div>
+                        <a href="dth.html">DTH Recharge</a>
+                     </div>
+                  </div>
+                  <div class="col-lg-2 col-md-2">
+                     <div class="img_service_area">
+                        <div class="img_back">
+                           <img src="img/bbps.png">
+                        </div>
+                        <a href="bbps.html">Bill Payments</a>
+                     </div>
+                  </div>
+                  <div class="col-lg-2 col-md-2">
+                     <div class="img_service_area">
+                        <div class="img_back">
+                           <img src="img/dmt2.png">
+                        </div>
+                        <a href="index.html">Money Transfer</a>
+                     </div>
+                  </div>
+                  <div class="col-lg-2 col-md-2">
+                    <div class="img_service_area active">
+                       <div class="img_back">
+                          <img src="img/matm.png">
+                       </div>
+                       <a href="microatm.html">Mini ATM</a>
+                    </div>
+                 </div>
+                  <div class="col-lg-2 col-md-2">
+                     <div class="img_service_area">
+                        <div class="img_back">
+                           <img src="img/cmsser.png">
+                        </div>
+                        <a href="#">CMS</a>
+                     </div>
+                  </div>
+                </div>
+                <div class="hidden_show_services">
+                   <div id="panel" style="display: none;">
+                      <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                          <div class="img_service_area">
+                             <div class="img_back">
+                                <img src="img/aeps.png">
+                             </div>
+                             <a href="aeps-service.html">AePs-1</a>
+                          </div>
+                       </div>
+                       <div class="col-lg-2 col-md-2">
+                          <div class="img_service_area">
+                             <div class="img_back">
+                                <img src="img/aeps.png">
+                             </div>
+                             <a href="aeps-service.html">AePs-2</a>
+                          </div>
+                       </div>
+                        <div class="col-lg-2 col-md-2">
+                           <div class="img_service_area">
+                              <div class="img_back">
+                                 <img src="img/pay1.png">
+                              </div>
+                              <a href="aadhaarpay.html">Aadhaar Pay</a>
+                           </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                           <div class="img_service_area">
+                              <div class="img_back">
+                                 <img src="img/train.png">
+                              </div>
+                              <a href="#">IRCTC Ticket Booking</a>
+                           </div>
+                        </div>
+                         
+                         <div class="col-lg-2 col-md-2">
+                            <div class="img_service_area">
+                               <div class="img_back">
+                                  <img src="img/bus.png">
+                               </div>
+                               <a href="#">Bus Booking</a>
+                            </div>
+                         </div>
+                         <div class="col-lg-2 col-md-2">
+                           <div class="img_service_area">
+                              <div class="img_back">
+                                 <img src="img/flight.png">
+                              </div>
+                              <a href="#">Flight Booking</a>
+                           </div>
+                        </div>
+                         <div class="col-lg-2 col-md-2">
+                            <div class="img_service_area">
+                               <div class="img_back">
+                                  <img src="img/hotel.png">
+                               </div>
+                               <a href="#">Hotel Booking</a>
+                            </div>
+                         </div>
+                         <div class="col-lg-2 col-md-2">
+                           <div class="img_service_area">
+                              <div class="img_back">
+                                 <img src="img/pan-card.png">
+                              </div>
+                              <a href="#">PAN Card</a>
+                           </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                          <div class="img_service_area">
+                             <div class="img_back">
+                                <img src="img/insurance.png">
+                             </div>
+                             <a href="#">Insurance</a>
+                          </div>
+                       </div>
+                       
+                      </div>
+                   </div>
+                   <div id="flip" class="view_all_services_hide"><span class="bg-light"><i class="fa fa-angle-down rotate" aria-hidden="true"></i></span></div>
+                </div>
+           </div>
+      </section>
+      <section class="prepaid-area1">
+        <div class="conatiner-fluid">
+           <div class="row">
+              <div class="col-md-12">
+               <div class="tab">
+                 <button class="tablinks active" onclick="openCity(event, 'microatm')">History</button>
+               </div>
+               <div id="microatm" class="tabcontent" style="display: block;">
+                <div class="recent_txn">
+                 <div class="row my-3">
+                   <div class="col-md-3">
+                     <form action="#">
+                       <div class="search">
+                         <div class="form-group ico">
+                           <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                           <input type="search" class="form-control" placeholder="Search">
+                         </div>
+                       </div>
+                     </form>
+                    </div>
+                 </div>
+                 <div class="row">
+                  <div class="col-lg-12">
+                   <div class="table-responsive">
+                     <table class="table table-bordered table-striped table-hover w-100">
+                       <thead>
+                         <tr>
+                           <th>Date / Time</th>
+                           <th>Customer Mobile</th>
+                           <th>Service</th>
+                           <th>Bank Name</th>
+                           <th>Tnx ID</th>
+                           <th>Bank Refno</th>
+                           <th>Card no</th>
+                           <th>Amount</th>
+                           <th>Status</th>
+                           <th>Source</th>
+                           <th>More</th>
+                         </tr>
+                       </thead>
+                       <tbody>
+                         <tr>
+                           <td>09/05/2023 17:10:35</td>
+                           <td>9609952830</td>
+                           <td>Cash Withdrawal</td>
+                           <td>State Bank of India</td>
+                           <td>300779871</td>
+                           <td>20230505171039766</td>
+                           <td>123456XXXXXX7890</td>
+                           <td>1000</td>
+                           <td>
+                             <div class="success_sts">
+                               Success
+                             </div>
+                           </td>
+                           <td>App</td>
+                           <td>
+                            <div class="print_icon drowdown_three_dot">
+                              <div class="btn-group dropstart">
+                                <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                 <li><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Print</button></li>
+                                 <li><button type="button" class="btn">Complain</button></li>
+                                </ul>
+                              </div>
+                              
+                            </div>
+                          </td>
+                         </tr>
+                         <tr>
+                          <td>09/05/2023 17:10:35</td>
+                          <td>9609952830</td>
+                          <td>Balance Enquiry</td>
+                          <td>State Bank of India</td>
+                          <td>300779871</td>
+                          <td>20230505171039766</td>
+                          <td>123456XXXXXX7890</td>
+                          <td>0</td>
+                          <td>
+                            <div class="success_sts bg-danger">
+                              Failed
+                            </div>
+                          </td>
+                          <td>App</td>
+                          <td>
+                            <div class="print_icon drowdown_three_dot">
+                              <div class="btn-group dropstart">
+                                <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                 <li><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal3">Print</button></li>
+                                 <li><button type="button" class="btn">Complain</button></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                       </tbody>
+                     </table>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+              </div>
+              </div>
+           </div>
+        </div>
+     </section>
+    </main>
+      <!-- Modal Start -->
+      <section class="modal_page aeps_modal">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Mini ATM Receipt</h5>
+              </div>
+              <div class="modal-body">
+                <div class="modal_border">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="logo_icon">
+                        <img src="img/logo.png" alt="Bank logo">
+                      <h5>Vidhi Enterprises-SPR5008</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="">
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="statement_area">
+                      <div class="statementlogo_info1">
+                     <p>Date:</p>
+                      </div>
+                      <div class="statementlogo_info2">
+                        <p>14-May-2023 12:35:10 PM</p>
+                      </div>
+                   </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="statement_area">
+                    <div class="statementlogo_info1">
+                   <p>Service:</p>
+                    </div>
+                    <div class="statementlogo_info2">
+                      <p>Cash Withdrawal</p>
+                    </div>
+                 </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="statement_area">
+                  <div class="statementlogo_info1">
+                 <p>Card No:</p>
+                  </div>
+                  <div class="statementlogo_info2">
+                    <p>123456XXXXXX7890</p>
+                  </div>
+               </div>
+              </div>
+              <div class="col-md-12">
+                <div class="statement_area">
+                <div class="statementlogo_info1">
+               <p>Status:</p>
+                </div>
+                <div class="statementlogo_info2">
+                  <p>SUCCESS</p>
+                </div>
+             </div>
+            </div>
+            <div class="col-md-12">
+              <div class="statement_area">
+              <div class="statementlogo_info1">
+             <p>Aval. Balance:</p>
+              </div>
+              <div class="statementlogo_info2">
+                <p>428.46</p>
+              </div>
+           </div>
+          </div>
+          <div class="col-md-12">
+            <div class="statement_area">
+            <div class="statementlogo_info1">
+           <p>RRN:</p>
+            </div>
+            <div class="statementlogo_info2">
+              <p>313412578691</p>
+            </div>
+         </div>
+        </div> 
+        <div class="col-md-12">
+          <div class="statement_area">
+          <div class="statementlogo_info1">
+         <p>Amount:</p>
+          </div>
+          <div class="statementlogo_info2">
+            <p>5000</p>
+          </div>
+           </div>
+           </div>
+                </div>
+              </div>
+              <div  style="height: 150px;border-top: 1px solid;"></div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="powerBy">
+                    <p>This is system generated receipt. Hence no seal or signature required <br/>Thank you for using Ezypay</p>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+            <div class="modal_footer">
+              <div class="row">
+                <div class="col-md-6">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+                <div class="col-md-6">
+                  <button type="button" class="btn btn-primary" onclick="window.print()">Print</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+       </section>
+       <section class="modal_page aeps_modal">
+        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Mini ATM Receipt</h5>
+              </div>
+              <div class="modal-body">
+                <div class="modal_border">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="logo_icon">
+                        <img src="img/logo.png" alt="Bank logo">
+                      <h5>Vidhi Enterprises-SPR5008</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="">
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="statement_area">
+                      <div class="statementlogo_info1">
+                     <p>Date:</p>
+                      </div>
+                      <div class="statementlogo_info2">
+                        <p>14-May-2023 12:35:10 PM</p>
+                      </div>
+                   </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="statement_area">
+                    <div class="statementlogo_info1">
+                   <p>Service:</p>
+                    </div>
+                    <div class="statementlogo_info2">
+                      <p>Balance Enquiry</p>
+                    </div>
+                 </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="statement_area">
+                  <div class="statementlogo_info1">
+                 <p>Card No :</p>
+                  </div>
+                  <div class="statementlogo_info2">
+                    <p>123456XXXXXX7890</p>
+                  </div>
+               </div>
+              </div>
+              <div class="col-md-12">
+                <div class="statement_area">
+                <div class="statementlogo_info1">
+               <p>Status:</p>
+                </div>
+                <div class="statementlogo_info2">
+                  <p>SUCCESS</p>
+                </div>
+             </div>
+            </div>
+            <div class="col-md-12">
+              <div class="statement_area">
+              <div class="statementlogo_info1">
+             <p>Aval. Balance:</p>
+              </div>
+              <div class="statementlogo_info2">
+                <p>428.46</p>
+              </div>
+           </div>
+          </div>
+          <div class="col-md-12">
+            <div class="statement_area">
+            <div class="statementlogo_info1">
+           <p>RRN:</p>
+            </div>
+            <div class="statementlogo_info2">
+              <p>313412578691</p>
+            </div>
+         </div>
+        </div> 
+        <div class="col-md-12">
+          <div class="statement_area">
+          <div class="statementlogo_info1">
+         <p>Amount:</p>
+          </div>
+          <div class="statementlogo_info2">
+            <p>0</p>
+          </div>
+           </div>
+           </div>
+                </div>
+              </div>
+              <div  style="height: 150px;border-top: 1px solid;"></div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="powerBy">
+                    <p>This is system generated receipt. Hence no seal or signature required <br/>Thank you for using Ezypay</p>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+            <div class="modal_footer">
+              <div class="row">
+                <div class="col-md-6">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+                <div class="col-md-6">
+                  <button type="button" class="btn btn-primary" onclick="window.print()">Print</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+       </section>
+   
+       <!-- Modal End -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="js/mainscript.js"></script>
+  </body>
+</html>

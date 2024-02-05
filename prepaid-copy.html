@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Ezypay Admin Panel</title>
+  </head>
+  <body>
+    <!-- top navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebar"
+          aria-controls="offcanvasExample"
+        >
+          <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+        </button>
+        <a
+          class="navbar-brand me-auto logo ms-3"
+          href="#"
+          ><img src="img/logo.png" class="img-fluid" alt=""></a
+        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar" 
+        aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="topNavBar">
+          <div class="d-flex ms-auto my-3 my-lg-0">
+            <ul class="navbar-nav align-items-center">
+              <li>
+                 <div class="balance_show">
+                    <div class="main_aeps_bal">
+                       <h5>Main</h5>
+                       <p>₹ 100</p>
+                    </div>
+                    <div class="main_aeps_bal">
+                       <h5>Aeps</h5>
+                       <p>₹ 300</p>
+                    </div>
+                 </div>
+              </li>
+              <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle ms-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 <i class="bi bi-person-fill"></i>
+                 </a>
+                 <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                       <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                 </ul>
+              </li>
+           </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- top navigation bar -->
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-start sidebar-nav bg-light" tabindex="-1" id="sidebar">
+      <div class="offcanvas-body p-0">
+        <nav class="navbar-dark">
+          <ul class="navbar-nav">
+            <li>
+            </li>
+            <li>
+              <a href="index.html" class="nav-link active">
+                <span class="me-2"><img src="img/dashboard.png" alt="dashboard"></span>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-3">
+                <span class="me-2"><img src="img/businessman.png" alt="businessman"></span>
+                <span>Profile</span>
+              </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link">
+                  <span class="me-2"><img src="img/bank.png" alt="bank"></span>
+                  <span>Bank Details</span>
+                </a>
+              </li>
+              <li>
+                <a href="txn_history.html" class="nav-link">
+                  <span class="me-2"><img src="img/transaction-history.png" alt="transaction-history"></span>
+                  <span>Txn History</span>
+                </a>
+              </li>
+              <li class="accordion dropdown_sec" id="accordionExample">
+                  <div class="accordion-item">
+                      <a href="javascript:void(0)" class="nav-link accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <span class="me-2"><img src="img/report.png" alt="report"></span>
+                        <span>Report</span>
+                      </a>
+                    <ul id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <li><a href="retailer.html" class="drop_list">
+                      <span class="me-2"><img src="img/store.png" alt="report"></span>
+                        <span>Retailer</span>
+                    </a>
+                    </li>
+                    <li><a href="distributor.html" class="drop_list">
+                      <span class="me-2"><img src="img/distributor.png" alt="report"></span>
+                        <span>Distributor</span>
+                    </a>
+                    </li>
+                    <li><a href="sales.html" class="drop_list">
+                      <span class="me-2"><img src="img/salesman.png" alt="report"></span>
+                        <span>Sales Person</span>
+                    </a>
+                    </li>
+                    <li><a href="targetVSachievement.html" class="drop_list">
+                      <span class="me-2"><img src="img/target.png" alt="report"></span>
+                        <span>Target vs Achievement</span>
+                    </a>
+                    </li>
+                    </ul>
+                  </div>
+              </li>
+              <li class="accordion dropdown_sec" id="accordionExample">
+                <div class="accordion-item">
+                    <a href="javascript:void(0)" class="nav-link accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      <span class="me-2"><img src="img/report.png" alt="report"></span>
+                      <span>Reports</span>
+                    </a>
+                  <ul id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                  <li><a href="report_purchase_summary.html" class="drop_list">
+                    <span class="me-2"><img src="img/store.png" alt="report"></span>
+                      <span>Purchase Summary</span>
+                  </a>
+                  </li>
+                  <li><a href="report_transaction_report.html" class="drop_list">
+                    <span class="me-2"><img src="img/distributor.png" alt="report"></span>
+                      <span>Transaction Report</span>
+                  </a>
+                  </li>
+                  <li><a href="report_bbps_agent.html" class="drop_list">
+                    <span class="me-2"><img src="img/salesman.png" alt="report"></span>
+                      <span>BBPS Agent Master</span>
+                  </a>
+                  </li>
+                  <li><a href="report_cashout.html" class="drop_list">
+                    <span class="me-2"><img src="img/target.png" alt="report"></span>
+                      <span>Cashout Report</span>
+                  </a>
+                  </li>
+                  <li><a href="report_payment.html" class="drop_list">
+                    <span class="me-2"><img src="img/target.png" alt="report"></span>
+                      <span>Payment History</span>
+                  </a>
+                  </li>
+                  <li><a href="report_dmt_history.html" class="drop_list">
+                    <span class="me-2"><img src="img/target.png" alt="report"></span>
+                      <span>DMT History</span>
+                  </a>
+                  </li>
+                  <li><a href="report_vendor_transaction.html" class="drop_list">
+                    <span class="me-2"><img src="img/target.png" alt="report"></span>
+                      <span>Vendor Transaction Report</span>
+                  </a>
+                  </li>
+                  </ul>
+                </div>
+            </li>
+              <li class="accordion dropdown_sec" id="accordionExample">
+                <div class="accordion-item">
+                    <a href="#" class="nav-link accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      <span class="me-2"><img src="img/balance.png" alt="balance"></span>
+                      <span>Balance</span>
+                    </a>
+                  <ul id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <li><a href="MyBalanceRetailer.html" class="drop_list">
+                    <span class="me-2"><img src="img/store.png" alt="report"></span>
+                      <span>Retailer</span>
+                  </a>
+                  </li>
+                  <li><a href="MyBalanceDistributor.html" class="drop_list">
+                    <span class="me-2"><img src="img/distributor.png" alt="report"></span>
+                      <span>Distributor</span>
+                  </a>
+                  </li>
+                  <li><a href="MyBalanceFranchise.html" class="drop_list">
+                    <span class="me-2"><img src="img/franchise.png" alt="report"></span>
+                      <span>Franchise</span>
+                  </a>
+                  </li>
+                  <li><a href="MyBalancePartner.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="report"></span>
+                      <span>Partner</span>
+                  </a>
+                  </li>
+                  </ul>
+                </div>
+            </li>
+            <li class="accordion dropdown_sec" id="accordionExample">
+                <div class="accordion-item">
+                    <a href="javascript:void(0)" class="nav-link accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      <span class="me-2"><img src="img/balance.png" alt="balance"></span>
+                      <span>Accounts</span>
+                    </a>
+                  <ul id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                  <li><a href="account_tds-retailer.html" class="drop_list">
+                    <span class="me-2"><img src="img/distributor.png" alt="distributor"></span>
+                      <span>TDS (Retailer)</span>
+                  </a>
+                  </li>
+                  <li><a href="account_franchise.html" class="drop_list">
+                    <span class="me-2"><img src="img/franchise.png" alt="franchise"></span>
+                      <span>TDS (Franchise)</span>
+                  </a>
+                  </li>
+                  <li><a href="account_p2psales.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>P2P Sales</span>
+                  </a>
+                  </li>
+                  <li><a href="accounts_surcharge.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>Surcharge</span>
+                  </a>
+                  </li>
+                  <li><a href="account_dmt_commission.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>DMT Commission</span>
+                  </a>
+                  </li>
+                  <li><a href="account_p2a_commission.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>P2A Commission New</span>
+                  </a>
+                  </li>
+                  <li><a href="account_my_income.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>My Income</span>
+                  </a>
+                  </li>
+                  <li><a href="account_p2a_sale.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>P2A Sale</span>
+                  </a>
+                  </li>
+                  <li><a href="purchase_summary.html" class="drop_list">
+                    <span class="me-2"><img src="img/partner.png" alt="partner"></span>
+                      <span>Purchase Summary</span>
+                  </a>
+                  </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#" class="nav-link">
+                  <span class="me-2"><img src="img/bill.png" alt="bill"></span>
+                  <span>Invoices</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link">
+                  <span class="me-2"><img src="img/download.png" alt="download"></span>
+                  <span>Download</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link">
+                  <span class="me-2"><img src="img/certificate.png" alt="certificate"></span>
+                  <span>Download Certificate</span>
+                </a>
+              </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- offcanvas -->
+    <main class="mt-5 pt-3">
+    <section class="dashboard">
+     <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Dashboard</h3>
+          </div>
+        </div>
+      </div>
+     </section>
+      <section class="serv2" id="hideArea">
+        <div class="container-fluid">
+          <div class="services ">
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="service-area">
+                   <h3>Service</h3>
+                  </div>
+               </div>
+             </div>
+        </div>
+                <div class="row">
+                   <div class="col-lg-2 col-md-2">
+                      <div class="img_service_area active">
+                         <div class="img_back">
+                            <img src="img/top-up.png">
+                         </div>
+                         <a href="prepaid.html">Mobile Recharge</a>
+                      </div>
+                   </div>
+                   <div class="col-lg-2 col-md-2">
+                     <div class="img_service_area">
+                        <div class="img_back">
+                           <img src="img/dth.png">
+                        </div>
+                        <a href="dth.html">DTH Recharge</a>
+                     </div>
+                  </div>
+                  <div class="col-lg-2 col-md-2">
+                     <div class="img_service_area">
+                        <div class="img_back">
+                           <img src="img/bbps.png">
+                        </div>
+                        <a href="bbps.html">Bill Payments</a>
+                     </div>
+                  </div>
+                  <div class="col-lg-2 col-md-2">
+                     <div class="img_service_area">
+                        <div class="img_back">
+                           <img src="img/dmt2.png">
+                        </div>
+                        <a href="index.html">Money Transfer</a>
+                     </div>
+                  </div>
+                  <div class="col-lg-2 col-md-2">
+                    <div class="img_service_area">
+                       <div class="img_back">
+                          <img src="img/matm.png">
+                       </div>
+                       <a href="microatm.html">Mini ATM</a>
+                    </div>
+                 </div>
+                  <div class="col-lg-2 col-md-2">
+                     <div class="img_service_area">
+                        <div class="img_back">
+                           <img src="img/cmsser.png">
+                        </div>
+                        <a href="#">CMS</a>
+                     </div>
+                  </div>
+                </div>
+                <div class="hidden_show_services">
+                   <div id="panel" style="display: none;">
+                      <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                          <div class="img_service_area">
+                             <div class="img_back">
+                                <img src="img/aeps.png">
+                             </div>
+                             <a href="aeps-service.html">AePs-1</a>
+                          </div>
+                       </div>
+                       <div class="col-lg-2 col-md-2">
+                          <div class="img_service_area">
+                             <div class="img_back">
+                                <img src="img/aeps.png">
+                             </div>
+                             <a href="aeps-service.html">AePs-2</a>
+                          </div>
+                       </div>
+                        <div class="col-lg-2 col-md-2">
+                           <div class="img_service_area">
+                              <div class="img_back">
+                                 <img src="img/pay1.png">
+                              </div>
+                              <a href="aadhaarpay.html">Aadhaar Pay</a>
+                           </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                           <div class="img_service_area">
+                              <div class="img_back">
+                                 <img src="img/train.png">
+                              </div>
+                              <a href="#">IRCTC Ticket Booking</a>
+                           </div>
+                        </div>
+                         
+                         <div class="col-lg-2 col-md-2">
+                            <div class="img_service_area">
+                               <div class="img_back">
+                                  <img src="img/bus.png">
+                               </div>
+                               <a href="#">Bus Booking</a>
+                            </div>
+                         </div>
+                         <div class="col-lg-2 col-md-2">
+                           <div class="img_service_area">
+                              <div class="img_back">
+                                 <img src="img/flight.png">
+                              </div>
+                              <a href="#">Flight Booking</a>
+                           </div>
+                        </div>
+                         <div class="col-lg-2 col-md-2">
+                            <div class="img_service_area">
+                               <div class="img_back">
+                                  <img src="img/hotel.png">
+                               </div>
+                               <a href="#">Hotel Booking</a>
+                            </div>
+                         </div>
+                         <div class="col-lg-2 col-md-2">
+                           <div class="img_service_area">
+                              <div class="img_back">
+                                 <img src="img/pan-card.png">
+                              </div>
+                              <a href="#">PAN Card</a>
+                           </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2">
+                          <div class="img_service_area">
+                             <div class="img_back">
+                                <img src="img/insurance.png">
+                             </div>
+                             <a href="#">Insurance</a>
+                          </div>
+                       </div>
+                      </div>
+                   </div>
+                   <div id="flip" class="view_all_services_hide"><i class="fa fa-angle-down rotate" aria-hidden="true"></i></div>
+                </div>
+           </div>
+      </section>
+      <section class="recharge_area">
+       <div class="prepaid-area1">
+        <div class="conatiner-fluid">
+           <div class="row">
+              <div class="col-md-12">
+               <div class="tab">
+                 <button class="tablinks active" onclick="openCity(event, 'Beneficiaries')">Prepaid</button>
+                 <button class="tablinks" onclick="openCity(event, 'Postpaid')">Postpaid</button>
+               </div>
+               <div id="Beneficiaries" class="tabcontent" style="display: block;">
+                <section class="prepaid_services login-box1 recent_txn">
+                  <div class="conatiner">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="sender_verify mobile_recharge_page">
+                          <div class="col-md-12">
+                              <label for="">Recharge</label>
+                            </div>
+                          <form action="">
+                            <div class="row mb-3">
+                              <div class="col-md-12">
+                                <div class="user-box">
+                                  <input type="text" name="" required="">
+                                  <label>Mobile Number</label>
+                                </div>
+                              </div>
+                              </div>
+                            <div class="row mb-3">
+                              <div class="col-md-12">
+                                  <div class="user-box">
+                                    <select>
+                                      <option selected>Operator</option>
+                                      <option value="1">  BSNL </option>
+                                      <option value="2"> TATA DOCOMO </option>
+                                      <option value="3"> AIRTEL </option>
+                                      <option value="4"> MTNL MUMBAI </option>
+                                      <option value="5"> MTNL DELHI </option>
+                                      <option value="6"> RELIANCE JIO </option>
+                                      <option value="7"> VODAFONE IDEA </option>
+                                    </select>
+                                    <a href="#">Change Operator</a>
+                                    </div>
+                              </div>
+                              </div>
+                            <div class="row mb-3">
+                              <div class="col-md-12">
+                                  <div class="user-box">
+                                    <select>
+                                      <option selected>Circle</option>
+                                      <option value="1"> Karnataka </option>
+                                      <option value="2"> Tamil Nadu </option>
+                                      <option value="3"> Assam </option>
+                                      <option value="4"> Arunchal Pradesh </option>
+                                      <option value="5"> Telengana </option>
+                                      <option value="6"> Mizoram </option>
+                                      <option value="7"> Andhra Pradesh </option>
+                                    </select>
+                                    </div>
+                              </div>
+                              </div>
+                              <div class="row mb-3">
+                                <div class="col-md-12">
+                                  <div class="user-box">
+                                    <input type="text" name=""  required="">
+                                    <label>Amount</label>
+                                     <a href="#">View Plan</a>
+                                  </div>
+                                </div>
+                            </div>
+                              <div class="row align-items-center mb-3">
+                                <div class="col-md-12">
+                                  <div class="user-box">
+                                    <input type="password" name="" required="">
+                                    <label>Pin</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row justify-content-center">
+                                <div class="col-md-8">
+                                  <div class="btn-service-recharge">
+                                    <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Proceed To Pay</a>
+                                  </div>
+                                </div>
+                              </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="">
+                          <!-- <div class="row mb-3">
+                            <div class="col-md-3">
+                              <form action="#">
+                                <div class="search">
+                                  <div class="form-group ico">
+                                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                                    <input type="search" class="form-control" placeholder="Search">
+                                  </div>
+                                </div>
+                              </form>
+                             </div>
+                          </div> -->
+                          <div class="row">
+                           <div class="col-lg-12">
+                            <div class="table-responsive">
+                              <table class="table table-bordered table-striped bg-white w-100">
+                                <thead>
+                                  <tr>
+                                    <th>Type</th>
+                                    <th>Talktime</th>
+                                    <th>Validity</th>
+                                    <th>Description</th>
+                                    <th>Amt. (₹)</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Unlimited</td>
+                                    <td>--</td>
+                                    <td>24 days</td>
+                                    <td>Calls : Unlimited local, STD & Roaming | Data : 1GB | SMS : 300</td>
+                                    <td class="rech-amt">
+                                      <div class="rech-amt-main">
+                                        <span>₹</span> 239
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Unlimited</td>
+                                    <td>--</td>
+                                    <td>24 days</td>
+                                    <td>Calls : Unlimited local, STD & Roaming | Data : 1GB | SMS : 300</td>
+                                    <td class="rech-amt">
+                                      <div class="rech-amt-main">
+                                        <span>₹</span> 239
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Unlimited</td>
+                                    <td>--</td>
+                                    <td>24 days</td>
+                                    <td>Calls : Unlimited local, STD & Roaming | Data : 1GB | SMS : 300</td>
+                                    <td class="rech-amt">
+                                      <div class="rech-amt-main">
+                                        <span>₹</span> 239
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Unlimited</td>
+                                    <td>--</td>
+                                    <td>24 days</td>
+                                    <td>Calls : Unlimited local, STD & Roaming | Data : 1GB | SMS : 300</td>
+                                    <td class="rech-amt">
+                                      <div class="rech-amt-main">
+                                        <span>₹</span> 239
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Unlimited</td>
+                                    <td>--</td>
+                                    <td>24 days</td>
+                                    <td>Calls : Unlimited local, STD & Roaming | Data : 1GB | SMS : 300</td>
+                                    <td class="rech-amt">
+                                      <div class="rech-amt-main">
+                                        <span>₹</span> 239
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Unlimited</td>
+                                    <td>--</td>
+                                    <td>24 days</td>
+                                    <td>Calls : Unlimited local, STD & Roaming | Data : 1GB | SMS : 300</td>
+                                    <td class="rech-amt">
+                                      <div class="rech-amt-main">
+                                        <span>₹</span> 239
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Unlimited</td>
+                                    <td>--</td>
+                                    <td>24 days</td>
+                                    <td>Calls : Unlimited local, STD & Roaming | Data : 1GB | SMS : 300</td>
+                                    <td class="rech-amt">
+                                      <div class="rech-amt-main">
+                                        <span>₹</span> 239
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>Unlimited</td>
+                                    <td>--</td>
+                                    <td>24 days</td>
+                                    <td>Calls : Unlimited local, STD & Roaming | Data : 1GB | SMS : 300</td>
+                                    <td class="rech-amt">
+                                      <div class="rech-amt-main">
+                                        <span>₹</span> 239
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                      </div>
+                    </div>
+                  </div>
+               </section>
+               </div> 
+               <div id="Postpaid" class="tabcontent">
+                <section class="prepaid_services login-box1 recent_txn">
+                  <div class="conatiner">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="sender_verify mobile_recharge_page">
+                          <div class="col-md-12">
+                              <label for="">Recharge</label>
+                            </div>
+                          <form action="">
+                            <div class="row mb-3">
+                              <div class="col-md-12">
+                                <div class="user-box">
+                                  <input type="text" name="" required="">
+                                  <label>Mobile Number</label>
+                                </div>
+                              </div>
+                              </div>
+                            <div class="row mb-3">
+                              <div class="col-md-12">
+                                  <div class="user-box">
+                                    <select>
+                                      <option selected>Operator</option>
+                                      <option value="1"> BSNL </option>
+                                      <option value="2"> TATA DOCOMO </option>
+                                      <option value="3"> AIRTEL </option>
+                                      <option value="4"> MTNL MUMBAI </option>
+                                      <option value="5"> MTNL DELHI </option>
+                                      <option value="6"> RELIANCE JIO </option>
+                                      <option value="7"> VODAFONE IDEA </option>
+                                    </select>
+                                    <a href="#">change Operator</a>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="row mb-3">
+                              <div class="col-md-12">
+                                  <div class="user-box">
+                                    <select>
+                                      <option selected>Circle</option>
+                                      <option value="1"> Karnataka </option>
+                                      <option value="2"> Tamil Nadu </option>
+                                      <option value="3"> Assam </option>
+                                      <option value="4"> Arunchal Pradesh </option>
+                                      <option value="5"> Telengana </option>
+                                      <option value="6"> Mizoram </option>
+                                      <option value="7"> Andhra Pradesh </option>
+                                    </select>
+                                    </div>
+                              </div>
+                            </div>
+                              <div class="row mb-3">
+                                <div class="col-md-12">
+                                  <div class="user-box">
+                                    <input type="text" name=""  required="">
+                                    <label>Amount</label>
+                                  </div>
+                                </div>
+                            </div>
+                              <div class="row align-items-center mb-3">
+                                <div class="col-md-12">
+                                  <div class="user-box">
+                                    <input type="password" name="" required="">
+                                    <label>Pin</label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row justify-content-center">
+                                <div class="col-md-8">
+                                  <div class="btn-service-recharge">
+                                    <a type="button" href="#" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal1">Proceed To Pay</a>
+                                  </div>
+                                </div>
+                              </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="last-transaction">
+                           <div class="list-title">
+                              <h3>Recent Transaction</h3>
+                           </div>
+                           <div class="transaction-custom-scroll">
+                              <div class="list-item-section">
+                                 <table class="table">
+                                    <tbody>
+                                       <tr>
+                                          <td width="70px">
+                                             <img src="img/yesbank.png" alt="">
+                                          </td>
+                                          <td width="170px">
+                                             <div class="transaction-content">
+                                                <small>29 Oct 2023 07:08:23</small>
+                                                <h6>PR60535</h6>
+                                                <h5>T.id : 12365478951</h5>
+                                                <h5>Op.id : 12365478951</h5>
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <div class="transaction-content">
+                                                <h4>₹ 1200</h4>
+                                                <h5>Bal. ₹ 220.58</h5>
+                                                <h5>IMPS</h5>
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <div class="transaction-status bg-success">
+                                                Success
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td width="70px">
+                                             <img src="img/airtel.png" alt="">
+                                          </td>
+                                          <td width="170px">
+                                             <div class="transaction-content">
+                                                <small>29 Oct 2023 07:08:23</small>
+                                                <h6>PR60535</h6>
+                                                <h5>T.id : 12365478951</h5>
+                                                <h5>Op.id : 12365478951</h5>
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <div class="transaction-content">
+                                                <h4>₹ 1200</h4>
+                                                <h5>Bal. ₹ 220.58</h5>
+                                                <h5>RECHARGE</h5>
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <div class="transaction-status bg-danger">
+                                                Failed
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td width="70px">
+                                             <img src="img/aeps-logo.png" alt="">
+                                          </td>
+                                          <td width="170px">
+                                             <div class="transaction-content">
+                                                <small>29 Oct 2023 07:08:23</small>
+                                                <h6>PR60535</h6>
+                                                <h5>T.id : 12365478951</h5>
+                                                <h5>Op.id : 12365478951</h5>
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <div class="transaction-content">
+                                                <h4>₹ 1200</h4>
+                                                <h5>Bal. ₹ 220.58</h5>
+                                                <h5>AEPS</h5>
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <div class="transaction-status bg-success">
+                                                Success
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td width="70px">
+                                             <img src="img/bbps.png" alt="">
+                                          </td>
+                                          <td width="170px">
+                                             <div class="transaction-content">
+                                                <small>29 Oct 2023 07:08:23</small>
+                                                <h6>PR60535</h6>
+                                                <h5>T.id : 12365478951</h5>
+                                                <h5>Op.id : 12365478951</h5>
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <div class="transaction-content">
+                                                <h4>₹ 1200</h4>
+                                                <h5>Bal. ₹ 220.58</h5>
+                                                <h5>ELECTRICITY</h5>
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <div class="transaction-status bg-danger">
+                                                Failed
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td width="70px">
+                                             <img src="img/bbps.png" alt="">
+                                          </td>
+                                          <td width="170px">
+                                             <div class="transaction-content">
+                                                <small>29 Oct 2023 07:08:23</small>
+                                                <h6>PR60535</h6>
+                                                <h5>T.id : 12365478951</h5>
+                                                <h5>Op.id : 12365478951</h5>
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <div class="transaction-content">
+                                                <h4>₹ 1200</h4>
+                                                <h5>Bal. ₹ 220.58</h5>
+                                                <h5>ELECTRICITY</h5>
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <div class="transaction-status bg-danger">
+                                                Failed
+                                             </div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td width="70px">
+                                             <img src="img/bbps.png" alt="">
+                                          </td>
+                                          <td width="170px">
+                                             <div class="transaction-content">
+                                                <small>29 Oct 2023 07:08:23</small>
+                                                <h6>PR60535</h6>
+                                                <h5>T.id : 12365478951</h5>
+                                                <h5>Op.id : 12365478951</h5>
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <div class="transaction-content">
+                                                <h4>₹ 1200</h4>
+                                                <h5>Bal. ₹ 220.58</h5>
+                                                <h5>ELECTRICITY</h5>
+                                             </div>
+                                          </td>
+                                          <td>
+                                             <div class="transaction-status bg-danger">
+                                                Failed
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                    </div>
+                  </div>
+               </section>
+              </div>
+              </div>
+           </div>
+        </div>
+      </div>
+     </section>
+      </main>
+          <!-- Modal Prepaid Start -->
+          <section class="modal_page">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirm Payment</h5>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="bank_area_logo">
+                          <div class="bank_icon">
+                            <img src="img/airtel.png" alt="Airtel logo">
+                          </div>
+                          <div class="bank_name">
+                            <h2>Airtel</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="bank_info1">
+                       <p>Mobile Number</p>
+                        </div>
+                      </div>
+                      <div class="col-md-7">
+                        <div class="bank_info2">
+                          <p>: 01234567890</p>
+                           </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="bank_info1">
+                       <p>Service Type</p>
+                        </div>
+                      </div>
+                      <div class="col-md-7">
+                        <div class="bank_info2">
+                          <p>: Prepaid</p>
+                           </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="bank_info1">
+                       <p>Amount</p>
+                        </div>
+                      </div>
+                      <div class="col-md-7">
+                        <div class="bank_info2">
+                          <p>: 100.00 <br/>(One Hundred Only)</p>
+                           </div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="modal_footer">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                      </div>
+                      <div class="col-md-6">
+                        <button type="button" class="btn btn-primary">Confirm</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </section>
+        <!-- Modal Prepaid End -->
+         <!-- Modal Postpaid Start -->
+         <section class="modal_page">
+          <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Confirm Payment</h5>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="bank_area_logo">
+                        <div class="bank_icon">
+                          <img src="img/airtel.png" alt="Airtel logo">
+                        </div>
+                        <div class="bank_name">
+                          <h2>Airtel</h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <div class="bank_info1">
+                     <p>Mobile Number</p>
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="bank_info2">
+                        <p>: 01234567890</p>
+                         </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-5">
+                      <div class="bank_info1">
+                     <p>Service Type</p>
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="bank_info2">
+                        <p>: Postpaid</p>
+                         </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-5">
+                      <div class="bank_info1">
+                     <p>Amount</p>
+                      </div>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="bank_info2">
+                        <p>: 100.00 <br/>(One Hundred Only)</p>
+                         </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                <div class="modal_footer">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    </div>
+                    <div class="col-md-6">
+                      <button type="button" class="btn btn-primary">Confirm</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         </section>
+      <!-- Modal Postpaid End -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <script src="./js/dataTables.bootstrap5.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="js/mainscript.js"></script>
+  </body>
+</html>
